@@ -1,0 +1,216 @@
+
+:root {
+    --Page-Width: 80%;
+    --Page-Width-Mobile: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --Text-Primary: hsla(25, 100%, 92%, 1);
+        --Text-Secondary: hsla(22, 29%, 68%, 1);
+        --Background-Primary: hsla(343, 12%, 12%, 1);
+        --Background-Secondary: hsla(350, 13%, 9%, 1);
+        --Border-Color: hsla(345, 10%, 24%, 1);
+        --Accent: hsl(14, 83%, 55%);
+        --Accent-Invert: hsl(194, 83%, 55%);
+    }
+}
+
+/* Body */
+
+Body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--Background-Primary);
+    text-rendering: optimizeLegibility;
+    font-family: 'Inter', sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--Text-Primary);
+}
+
+/* Wrap */
+
+.Wrap {
+    box-sizing: border-box;
+    width: var(--Page-Width);
+    position: relative;
+    z-index: 2;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4.5em;
+    padding-top: calc(70px + 250px);
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+@media (max-width: 1200px) {
+    .Wrap {
+        width: calc(var(--Page-Width-Mobile) - 24px);
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 150px;
+        margin-bottom: 4.5em;
+    }
+}
+
+/* Navigate */
+
+.Navigate {
+    border-bottom: 1px solid var(--Border-Color);
+    background-color: var(--Background-Primary);
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    box-sizing: border-box;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Navigate-Wrap {
+    height: 100%;
+    width: var(--Page-Width);
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Navigate-Split {
+    border-right: 1px solid var(--Border-Color) !important;
+    border-width: 0;
+    height: calc(100% - 24px);
+    width: 0;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.Navigate-Link {
+    color: var(--Text-Primary);
+    font-size: 28px;
+    height: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1200px) {
+    .Navigate {
+        border-top: 1px solid var(--Border-Color);
+        border-bottom-width: 0;
+        bottom: 0;
+        justify-content: center;
+    }
+
+    .Navigate-Wrap {
+        width: var(--Page-Width-Mobile);
+    }
+
+    .Navigate-Link {
+        font-size: 20px;
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Icons */
+
+.Hero {
+    border-bottom: 1px solid var(--Border-Color);
+    background-color: var(--Background-Secondary);
+    height: 350px;
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: 70px;
+}
+
+.Profile {
+    background: var(--Background-Primary) url(Profile.png) center center no-repeat;
+    background-size: contain;
+    height: 200px;
+    width: 200px;
+    display: block;
+}
+
+@media (max-width: 1200px) {
+    .Hero {
+        top: 0;
+        height: 200px;
+    }
+
+    .Profile {
+        width: 100px;
+        height: 100px;
+    }
+
+}
+
+/* Text */
+
+.Title {
+    color: var(--Accent);
+    font-size: 48px;
+    font-weight: 200;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-left: 0;
+    margin-right: 0;
+    display: inline-block;
+}
+
+.Text {
+    margin-top: 0;
+    margin-bottom: 6px;
+}
+
+.Generic-Split {
+    border-width: 0;
+    border-style: none;
+    background-color: var(--Border-Color);
+    height: 1px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+/* Link */
+
+.Link-Section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+}
+
+.Social-Link {
+    color: var(--Text-Primary);
+    border: 1px solid var(--Border-Color);
+    background-color: var(--Background-Primary);
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.Social-Vector {
+    fill: var(--Accent);
+    width: 32px;
+    height: 32px;
+}
+
+@media (max-width: 1200px) {
+    .Link-Section {
+        grid-template-columns: none;
+    }
+}
