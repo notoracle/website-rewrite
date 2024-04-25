@@ -12,14 +12,14 @@
         --Background-Primary: hsla(343, 12%, 12%, 1);
         --Background-Secondary: hsla(350, 13%, 9%, 1);
         --Border-Color: hsla(345, 10%, 24%, 1);
-        --Accent: hsl(14, 83%, 55%);
-        --Accent-Invert: hsl(194, 83%, 55%);
+        --Accent: hsla(346, 100%, 60%, 1);
     }
 }
 
 /* Body */
 
 Body {
+    height: 100vh;
     margin: 0;
     padding: 0;
     background-color: var(--Background-Primary);
@@ -40,10 +40,10 @@ Body {
     z-index: 2;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 4.5em;
-    padding-top: calc(70px + 250px);
+    padding-top: calc(70px + 350px);
     padding-left: 24px;
     padding-right: 24px;
+    height: 100%;
 }
 
 @media (max-width: 1200px) {
@@ -51,7 +51,7 @@ Body {
         width: calc(var(--Page-Width-Mobile) - 24px);
         padding-left: 0;
         padding-right: 0;
-        padding-top: 150px;
+        padding-top: 200px;
         margin-bottom: 4.5em;
     }
 }
@@ -63,6 +63,8 @@ Body {
     background-color: var(--Background-Primary);
     height: 70px;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
     position: fixed;
     box-sizing: border-box;
     z-index: 10;
@@ -74,10 +76,8 @@ Body {
 
 .Navigate-Wrap {
     height: 100%;
-    width: var(--Page-Width);
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
+    align-items: center;
 }
 
 .Navigate-Split {
@@ -102,16 +102,38 @@ Body {
     justify-content: center;
 }
 
+.Navigate-Icon {
+    border-radius: var(--Round);
+    width: 40px;
+    height: 40px;
+    margin-left: 24px;
+    margin-right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Navigate-Vector {
+    fill: var(--Text-Primary);
+    width: 100%;
+    height: 100%;
+}
+
 @media (max-width: 1200px) {
     .Navigate {
         border-top: 1px solid var(--Border-Color);
         border-bottom-width: 0;
         bottom: 0;
         justify-content: center;
+        flex-direction: column-reverse;
     }
 
     .Navigate-Wrap {
         width: var(--Page-Width-Mobile);
+    }
+
+    .Navigate-Wrap#Social {
+        display: none;
     }
 
     .Navigate-Link {
@@ -125,7 +147,8 @@ Body {
 
 .Hero {
     border-bottom: 1px solid var(--Border-Color);
-    background-color: var(--Background-Secondary);
+    background: var(--Background-Secondary) url('Banner.gif') center center no-repeat;
+    background-size: cover;
     height: 350px;
     width: 100%;
     position: absolute;
@@ -139,11 +162,12 @@ Body {
 }
 
 .Profile {
-    background: var(--Background-Primary) url(Profile.png) center center no-repeat;
+    border-radius: var(--Round);
+    background: var(--Background-Primary) url(Bee.gif) center center no-repeat;
     background-size: contain;
     height: 200px;
     width: 200px;
-    display: block;
+    display: none;
 }
 
 @media (max-width: 1200px) {
@@ -153,8 +177,8 @@ Body {
     }
 
     .Profile {
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
     }
 
 }
@@ -164,7 +188,7 @@ Body {
 .Title {
     color: var(--Accent);
     font-size: 48px;
-    font-weight: 200;
+    font-weight: 900;
     margin-top: 12px;
     margin-bottom: 12px;
     margin-left: 0;
@@ -186,32 +210,21 @@ Body {
     margin-bottom: 24px;
 }
 
-/* Link */
-
-.Link-Section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 6px;
+.Indentity {
+    display: flex;
+    margin-bottom: 12px;
 }
 
-.Social-Link {
-    color: var(--Text-Primary);
+.Identifier {
     border: 1px solid var(--Border-Color);
     background-color: var(--Background-Primary);
-    padding: 12px;
+    height: 48px;
+    min-width: 144px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-right: 12px;
     display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.Social-Vector {
-    fill: var(--Accent);
-    width: 32px;
-    height: 32px;
-}
-
-@media (max-width: 1200px) {
-    .Link-Section {
-        grid-template-columns: none;
-    }
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
 }
