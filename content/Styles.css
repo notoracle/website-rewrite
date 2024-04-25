@@ -2,6 +2,7 @@
 :root {
     --Page-Width: 80%;
     --Page-Width-Mobile: 100%;
+    --Round: 8px;
 }
 
 @media (prefers-color-scheme: dark) {
