@@ -2,33 +2,34 @@
 :root {
     --Page-Width: 80%;
     --Page-Width-Mobile: 100%;
-    --Round: 8px;
+    --Navigate-Height: 80px;
+    --Navigate-Height-Mobile: 60px;
+    --Image-Width: 200px;
+    --Image-Height: 420px;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --Text-Primary: hsla(25, 100%, 92%, 1);
-        --Text-Secondary: hsla(22, 29%, 68%, 1);
-        --Background-Primary: hsla(343, 12%, 12%, 1);
-        --Background-Secondary: hsla(350, 13%, 9%, 1);
-        --Border-Color: hsla(345, 10%, 24%, 1);
-        --Accent: hsla(346, 100%, 60%, 1);
+        --Text-Primary: 25, 100%, 92%;
+        --Text-Secondary: 22, 29%, 68%;
+        --Background-Primary: 343, 12%, 12%;
+        --Background-Secondary: 350, 13%, 9%;
+        --Border-Color: 345, 10%, 24%;
+        --Accent: 15, 100%, 62%;
     }
 }
 
 /* Body */
 
 Body {
-    height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: var(--Background-Primary);
+    background-color: hsl(var(--Background-Primary));
     text-rendering: optimizeLegibility;
-    font-family: 'Inter', sans-serif;
-    font-feature-settings: 'liga' 1, 'calt' 1;
+    font-family: 'Inclusive Sans', sans-serif;
     font-weight: 400;
     font-size: 20px;
-    color: var(--Text-Primary);
+    color: hsl(var(--Text-Primary));
 }
 
 /* Wrap */
@@ -40,28 +41,31 @@ Body {
     z-index: 2;
     margin-left: auto;
     margin-right: auto;
-    padding-top: calc(70px + 350px);
+    padding-top: calc(var(--Navigate-Height) + 24px);
     padding-left: 24px;
     padding-right: 24px;
-    height: 100%;
+    display: grid;
+    grid-template-columns: var(--Image-Width) 1fr;
+    gap: 24px;
 }
 
 @media (max-width: 1200px) {
     .Wrap {
         width: calc(var(--Page-Width-Mobile) - 24px);
+        display: flex;
+        flex-direction: column;
+        padding-top: 0;
         padding-left: 0;
         padding-right: 0;
-        padding-top: 200px;
-        margin-bottom: 4.5em;
+        margin-bottom: calc(var(--Navigate-Height) + 24px);
     }
 }
 
 /* Navigate */
 
 .Navigate {
-    border-bottom: 1px solid var(--Border-Color);
-    background-color: var(--Background-Primary);
-    height: 70px;
+    background-color: hsl(var(--Background-Primary));
+    height: var(--Navigate-Height);
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -81,7 +85,7 @@ Body {
 }
 
 .Navigate-Split {
-    border-right: 1px solid var(--Border-Color) !important;
+    border-right: 1px solid hsl(var(--Border-Color)) !important;
     border-width: 0;
     height: calc(100% - 24px);
     width: 0;
@@ -91,140 +95,83 @@ Body {
     margin-bottom: auto;
 }
 
-.Navigate-Link {
-    color: var(--Text-Primary);
-    font-size: 28px;
-    height: 100%;
-    padding-left: 24px;
-    padding-right: 24px;
+.Navigate-Text {
+    color: hsl(var(--Text-Primary));
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.Navigate-Icon {
-    border-radius: var(--Round);
-    width: 40px;
-    height: 40px;
-    margin-left: 24px;
-    margin-right: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.Navigate-Vector {
-    fill: var(--Text-Primary);
-    width: 100%;
-    height: 100%;
+    padding: 0 24px;
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
 }
 
 @media (max-width: 1200px) {
     .Navigate {
-        border-top: 1px solid var(--Border-Color);
-        border-bottom-width: 0;
+        border-top: 1px solid hsl(var(--Border-Color));
         bottom: 0;
-        justify-content: center;
-        flex-direction: column-reverse;
+        height: var(--Navigate-Height-Mobile);
     }
 
     .Navigate-Wrap {
         width: var(--Page-Width-Mobile);
     }
 
-    .Navigate-Wrap#Social {
-        display: none;
-    }
-
-    .Navigate-Link {
-        font-size: 20px;
+    .Navigate-Text {
         width: 100%;
         padding: 0;
     }
 }
 
-/* Icons */
-
-.Hero {
-    border-bottom: 1px solid var(--Border-Color);
-    background: var(--Background-Secondary) url('Banner.gif') center center no-repeat;
-    background-size: cover;
-    height: 350px;
-    width: 100%;
-    position: absolute;
-    box-sizing: border-box;
-    display: flex;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    top: 70px;
-}
-
-.Profile {
-    border-radius: var(--Round);
-    background: var(--Background-Primary) url(Bee.gif) center center no-repeat;
-    background-size: contain;
-    height: 200px;
-    width: 200px;
-    display: none;
-}
-
-@media (max-width: 1200px) {
-    .Hero {
-        top: 0;
-        height: 200px;
-    }
-
-    .Profile {
-        width: 200px;
-        height: 200px;
-    }
-
-}
-
 /* Text */
 
+.Image {
+    background: url('Oracle2.jpg') center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: var(--Image-Height);
+}
+
 .Title {
-    color: var(--Accent);
-    font-size: 48px;
-    font-weight: 900;
-    margin-top: 12px;
+    font-family: 'Zilla Slab';
+    font-size: 60px;
+    font-weight: 400;
+    margin-top: 0;
     margin-bottom: 12px;
-    margin-left: 0;
-    margin-right: 0;
+}
+
+.Subtitle {
+    background-color: hsla(var(--Text-Primary), 0.2);
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 12px;
     display: inline-block;
 }
 
 .Text {
     margin-top: 0;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
 }
 
-.Generic-Split {
-    border-width: 0;
-    border-style: none;
-    background-color: var(--Border-Color);
+.Divide {
+    background-color: hsl(var(--Border-Color));
+    border: 0;
+    width: 100%;
     height: 1px;
     margin-top: 24px;
     margin-bottom: 24px;
 }
 
-.Indentity {
-    display: flex;
+.Section {
+    font-family: 'Zilla Slab';
+    font-size: 32px;
+    font-weight: 400;
+    margin-top: 0;
     margin-bottom: 12px;
 }
 
-.Identifier {
-    border: 1px solid var(--Border-Color);
-    background-color: var(--Background-Primary);
-    height: 48px;
-    min-width: 144px;
-    padding-left: 12px;
-    padding-right: 12px;
-    margin-right: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
+/* Footer */
+
+.Footer {
+    width: 100%;
 }
