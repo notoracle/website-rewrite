@@ -3,9 +3,10 @@
     --Page-Width: 80%;
     --Page-Width-Mobile: 100%;
     --Navigate-Height: 80px;
-    --Navigate-Height-Mobile: 60px;
+    --Navigate-Height-Mobile: 70px;
     --Image-Width: 200px;
     --Image-Height: 100%;
+    --Image-Height-Mobile: 350px;
     --Radius: 2px 12px 2px 12px;
 }
 
@@ -14,9 +15,18 @@
         --Text-Primary: 22, 100%, 90%;
         --Text-Secondary: 22, 40%, 70%;
         --Background-Primary: 344, 16%, 12%;
-        --Background-Secondary: 344, 16%, 6%;
         --Border-Color: 344, 10%, 25%;
         --Accent: 22, 100%, 56%;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --Text-Primary: 215, 12%, 10%;
+        --Text-Secondary: 216, 14%, 35%;
+        --Background-Primary: 0, 0%, 98%;
+        --Border-Color: 216, 40%, 92%;
+        --Accent: 232, 60%, 50%;
     }
 }
 
@@ -108,9 +118,10 @@ Body {
 
 @media (max-width: 1200px) {
     .Navigate {
-        border-top: 1px solid hsl(var(--Border-Color));
+        background-color: hsl(var(--Background-Primary));
         bottom: 0;
-        height: var(--Navigate-Height-Mobile);
+        width: calc(var(--Page-Width-Mobile));
+        height: calc(var(--Navigate-Height-Mobile) + env(safe-area-inset-bottom));
     }
 
     .Navigate-Wrap {
@@ -123,6 +134,14 @@ Body {
     }
 }
 
+/* Header */
+
+@media (max-width: 1200px) {
+    .Header {
+        margin-top: -24px;
+    }
+}
+
 /* Text */
 
 .Image {
@@ -131,6 +150,17 @@ Body {
     background-size: cover;
     width: 100%;
     height: var(--Image-Height);
+    overflow: hidden;
+}
+
+.Image-Thing {
+    border-radius: 24px 24px 0 0;
+    height: 24px;
+    width: 100%;
+    margin-left: -12px;
+    margin-right: -12px;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 .Title {
@@ -154,6 +184,7 @@ Body {
 .Text {
     margin-top: 0;
     margin-bottom: 12px;
+    text-wrap: balance;
 }
 
 .Divide {
@@ -171,6 +202,32 @@ Body {
     font-weight: 400;
     margin-top: 0;
     margin-bottom: 12px;
+}
+
+@media (max-width: 1200px) {
+    .Image {
+        border-radius: 0;
+        background-position: center;
+        height: var(--Image-Height-Mobile);
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        margin-left: -12px;
+        margin-right: -12px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .Image-Thing {
+        background-color: hsl(var(--Background-Primary));
+        box-shadow: 0 -3px 12px 0 hsla(0, 0%, 0%, 0.7);
+    }
+}
+
+@media (max-width: 580px) {
+    .Image {
+        background-position: top;
+    }
 }
 
 /* Footer */
