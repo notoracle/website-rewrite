@@ -60,6 +60,12 @@ Body {
     gap: 24px;
 }
 
+.Non-Image {
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 @media (max-width: 1200px) {
     .Wrap {
         width: calc(var(--Page-Width-Mobile) - 24px);
@@ -118,6 +124,32 @@ Body {
 
 @media (max-width: 1200px) {
     .Navigate {
+        border-radius: 12px;
+        box-shadow: 0 3px 12px 0 hsla(0, 0%, 0%, 0.7);
+        background-color: hsl(var(--Background-Primary));
+        width: calc(var(--Page-Width-Mobile) - 24px);
+        height: calc(var(--Navigate-Height-Mobile));
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 12px;
+    }
+
+    .Navigate-Wrap {
+        width: var(--Page-Width-Mobile);
+    }
+
+    .Navigate-Text {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media (max-width: 810px) {
+    .Navigate {
+        border-radius: 0;
+        box-shadow: none;
         background-color: hsl(var(--Background-Primary));
         bottom: 0;
         width: calc(var(--Page-Width-Mobile));
@@ -187,7 +219,7 @@ Body {
     text-wrap: balance;
 }
 
-.Divide {
+hr {
     border-width: 0;
     background-color: hsl(var(--Border-Color));
     width: 100%;
@@ -204,10 +236,19 @@ Body {
     margin-bottom: 12px;
 }
 
+.Att-Link {
+    color: hsl(var(--Text-Primary));
+    width: 100%;
+    display: block;
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+    font-size: 32px;
+}
+
 @media (max-width: 1200px) {
     .Image {
         border-radius: 0;
-        background-position: center;
+        background-position: top;
         height: var(--Image-Height-Mobile);
         display: flex;
         flex-direction: column;
@@ -224,12 +265,6 @@ Body {
     }
 }
 
-@media (max-width: 580px) {
-    .Image {
-        background-position: top;
-    }
-}
-
 /* Footer */
 
 .Footer {
@@ -240,18 +275,19 @@ Body {
 }
 
 .Footer-Link {
+    border: 1px solid hsla(var(--Text-Primary), 0.5);
     box-sizing: border-box;
     width: 100%;
     height: var(--Navigate-Height-Mobile);
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
     gap: 12px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: hsl(var(--Text-Primary));
     border-radius: var(--Radius);
-    background-color: hsla(var(--Text-Primary), 0.2);
+    background: hsla(var(--Background-Primary));
 }
 
 .Footer-Vector {
