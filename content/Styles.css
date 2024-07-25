@@ -6,7 +6,7 @@
     --Navigate-Height-Mobile: 70px;
     --Image-Width: 200px;
     --Image-Height: 100%;
-    --Image-Height-Mobile: 350px;
+    --Image-Height-Mobile: 400px;
     --Radius: 2px 12px 2px 12px;
 }
 
@@ -124,16 +124,9 @@ Body {
 
 @media (max-width: 1200px) {
     .Navigate {
-        border-radius: 12px;
-        box-shadow: 0 3px 12px 0 hsla(0, 0%, 0%, 0.7);
         background-color: hsl(var(--Background-Primary));
-        width: calc(var(--Page-Width-Mobile) - 24px);
-        height: calc(var(--Navigate-Height-Mobile));
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 12px;
+        width: calc(var(--Page-Width-Mobile) - 48px);
+        height: var(--Navigate-Height-Mobile);
     }
 
     .Navigate-Wrap {
@@ -148,8 +141,6 @@ Body {
 
 @media (max-width: 810px) {
     .Navigate {
-        border-radius: 0;
-        box-shadow: none;
         background-color: hsl(var(--Background-Primary));
         bottom: 0;
         width: calc(var(--Page-Width-Mobile));
@@ -248,7 +239,7 @@ hr {
 @media (max-width: 1200px) {
     .Image {
         border-radius: 0;
-        background-position: top;
+        background-position: center;
         height: var(--Image-Height-Mobile);
         display: flex;
         flex-direction: column;
