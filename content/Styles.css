@@ -15,6 +15,7 @@
         --Text-Primary: 22, 100%, 90%;
         --Text-Secondary: 22, 40%, 70%;
         --Background-Primary: 344, 16%, 12%;
+        --Background-Float: 344, 16%, 12%, 80%;
         --Border-Color: 344, 10%, 25%;
         --Accent: 22, 100%, 56%;
     }
@@ -124,7 +125,7 @@ Body {
 
 @media (max-width: 1200px) {
     .Navigate {
-        background-color: hsl(var(--Background-Primary));
+        background-color: hsl(var(--Background-Float));
         width: calc(var(--Page-Width-Mobile) - 48px);
         height: var(--Navigate-Height-Mobile);
     }
@@ -169,17 +170,19 @@ Body {
 
 .Image {
     border-radius: var(--Radius);
-    background: hsl(var(--Accent)) url('Oracle2.jpg');
+    background: hsl(var(--Accent)) url('Oracle.jpg');
     background-size: cover;
     width: 100%;
     height: var(--Image-Height);
     overflow: hidden;
 }
 
+
 .Image-Thing {
     border-radius: 24px 24px 0 0;
     height: 24px;
     width: 100%;
+    
     margin-left: -12px;
     margin-right: -12px;
     padding-left: 12px;
@@ -261,24 +264,27 @@ hr {
 .Footer {
     width: 100%;
     gap: 12px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
 }
 
 .Footer-Link {
     border: 1px solid hsla(var(--Text-Primary), 0.5);
     box-sizing: border-box;
-    width: 100%;
-    height: var(--Navigate-Height-Mobile);
-    padding-left: 24px;
-    padding-right: 24px;
-    gap: 12px;
+    width: 196px;
+    height: 48px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 6px;
     color: hsl(var(--Text-Primary));
     border-radius: var(--Radius);
     background: hsla(var(--Background-Primary));
+}
+
+.Footer-Link:hover,
+.Footer-Link:active {
+    border-color: hsla(var(--Text-Primary));
+    background-color: hsla(var(--Text-Primary), 0.2);
 }
 
 .Footer-Vector {
@@ -291,5 +297,9 @@ hr {
     .Footer {
         display: flex;
         flex-direction: column;
+    }
+
+    .Footer-Link {
+        width: 100%;
     }
 }
