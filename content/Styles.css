@@ -8,6 +8,7 @@
     --Image-Height: 100%;
     --Image-Height-Mobile: 400px;
     --Radius: 2px 12px 2px 12px;
+    --Radius-Small: 2px 6px 2px 6px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,7 +16,6 @@
         --Text-Primary: 22, 100%, 90%;
         --Text-Secondary: 22, 40%, 70%;
         --Background-Primary: 344, 16%, 12%;
-        --Background-Float: 344, 16%, 12%, 80%;
         --Border-Color: 344, 10%, 25%;
         --Accent: 22, 100%, 56%;
     }
@@ -23,11 +23,11 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-        --Text-Primary: 215, 12%, 10%;
-        --Text-Secondary: 216, 14%, 35%;
-        --Background-Primary: 0, 0%, 98%;
-        --Border-Color: 216, 40%, 92%;
-        --Accent: 232, 60%, 50%;
+        --Text-Primary: 344, 16%, 12%;
+        --Text-Secondary: 344, 12%, 40%;
+        --Background-Primary: 22, 50%, 90%;
+        --Border-Color: 22, 28%, 65%;
+        --Accent: 22, 74%, 50%;
     }
 }
 
@@ -61,10 +61,10 @@ Body {
     gap: 24px;
 }
 
-.Non-Image {
-    gap: 0;
+.Wrap.Non-Image {
     display: flex;
     flex-direction: column;
+    gap: 0;
 }
 
 @media (max-width: 1200px) {
@@ -76,6 +76,18 @@ Body {
         padding-left: 0;
         padding-right: 0;
         margin-bottom: calc(var(--Navigate-Height) + 24px);
+    }
+}
+
+@media (max-width: 1200px) {
+    .Wrap.Non-Image {
+        padding-top: calc(var(--Navigate-Height) + 24px);
+    }
+}
+
+@media (max-width: 810px) {
+    .Wrap.Non-Image {
+        padding-top: 24px;
     }
 }
 
@@ -125,9 +137,11 @@ Body {
 
 @media (max-width: 1200px) {
     .Navigate {
-        background-color: hsl(var(--Background-Float));
-        width: calc(var(--Page-Width-Mobile) - 48px);
+        border-radius: var(--Radius);
+        background-color: hsla(var(--Background-Primary));
+        width: calc(var(--Page-Width-Mobile) - 24px);
         height: var(--Navigate-Height-Mobile);
+        margin-top: 12px;
     }
 
     .Navigate-Wrap {
@@ -160,9 +174,18 @@ Body {
 
 /* Header */
 
+.Header.Flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
 @media (max-width: 1200px) {
     .Header {
         margin-top: -24px;
+    }
+    .Header.Flex {
+        margin-top: 0;
     }
 }
 
@@ -189,9 +212,24 @@ Body {
     padding-right: 12px;
 }
 
+.Credit-Vector {
+    width: 32px;
+    height: 32px;
+    fill:hsl(var(--Text-Primary));
+}
+
 .Title {
     font-family: 'Kalam';
     font-size: 60px;
+    font-weight: 400;
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.Name {
+    font-family: 'Kalam';
+    font-size: 30px;
     font-weight: 400;
     line-height: 1;
     margin-top: 0;
@@ -259,6 +297,14 @@ hr {
     }
 }
 
+/* Credit */
+
+.Vector {
+    width: 48px;
+    height: 48px;
+    fill: hsl(var(--Text-Secondary));
+}
+
 /* Footer */
 
 .Footer {
@@ -279,12 +325,20 @@ hr {
     color: hsl(var(--Text-Primary));
     border-radius: var(--Radius);
     background: hsla(var(--Background-Primary));
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .Footer-Link:hover,
 .Footer-Link:active {
     border-color: hsla(var(--Text-Primary));
     background-color: hsla(var(--Text-Primary), 0.2);
+}
+
+.Footer-Link.No-Border {
+    border-width: 0;
+    width: auto;
+    background-color: transparent !important;
 }
 
 .Footer-Vector {
