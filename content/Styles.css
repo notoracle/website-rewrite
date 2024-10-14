@@ -297,6 +297,23 @@ hr {
     }
 }
 
+/* Link */
+
+.Link {
+    width: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 6px;
+    color: hsl(var(--Text-Primary));
+}
+
+.Link-Vector {
+    width: 16px;
+    height: 16px;
+    fill:hsl(var(--Text-Primary));
+}
+
 /* Credit */
 
 .Vector {
@@ -324,32 +341,21 @@ hr {
     gap: 6px;
     color: hsl(var(--Text-Primary));
     border-radius: var(--Radius);
-    background: hsla(var(--Background-Primary));
+    background-color: hsla(var(--Background-Primary));
     text-decoration: underline;
     text-underline-offset: 4px;
 }
 
 .Footer-Link:hover,
-.Footer-Link:active,
-.Footer-Link.No-Border:hover,
-.Footer-Link.No-Border:active {
+.Footer-Link:active {
     border-color: hsla(var(--Text-Primary));
     background-color: hsla(var(--Text-Primary), 0.2);
 }
 
-.Footer-Link.No-Border {
-    border-width: 0;
-    width: auto;
-    padding-left: 12px;
-    padding-right: 12px;
-    background-color: transparent;
-}
-
-
 .Footer-Vector {
     width: 32px;
     height: 32px;
-    fill:hsl(var(--Text-Primary));
+    fill: hsl(var(--Text-Primary)); 
 }
 
 @media (max-width: 810px) {
