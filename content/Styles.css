@@ -4,9 +4,10 @@
     --Page-Width-Mobile: 100%;
     --Navigate-Height: 80px;
     --Navigate-Height-Mobile: 70px;
+    --Banner-Height: 60px;
     --Image-Width: 200px;
     --Image-Height: 100%;
-    --Image-Height-Mobile: 400px;
+    --Image-Height-Mobile: 300px;
     --Radius: 2px 12px 2px 12px;
     --Radius-Small: 2px 6px 2px 6px;
 }
@@ -172,6 +173,25 @@ Body {
     }
 }
 
+/* Banner */
+
+.Banner {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: var(--Banner-Height);
+    margin-bottom: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: var(--Radius);
+    background: hsl(var(--Accent));
+    color: hsl(var(--Background-Primary));
+}
+
 /* Header */
 
 .Header.Flex {
@@ -202,10 +222,8 @@ Body {
 
 
 .Image-Thing {
-    border-radius: 24px 24px 0 0;
     height: 24px;
     width: 100%;
-    
     margin-left: -12px;
     margin-right: -12px;
     padding-left: 12px;
@@ -292,8 +310,7 @@ hr {
     }
 
     .Image-Thing {
-        background-color: hsl(var(--Background-Primary));
-        box-shadow: 0 -3px 12px 0 hsla(0, 0%, 0%, 0.7);
+        background: hsl(var(--Background-Primary));
     }
 }
 
@@ -309,7 +326,7 @@ hr {
 }
 
 .Link-Vector {
-    width: 16px;
+	width: 16px;
     height: 16px;
     fill:hsl(var(--Text-Primary));
 }
