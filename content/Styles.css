@@ -187,9 +187,22 @@ Body {
     margin-right: auto;
     padding-left: 12px;
     padding-right: 12px;
+    gap: 12px;
     border-radius: var(--Radius);
-    background: hsl(var(--Accent));
+    background: hsl(var(--Accent)) url('Stripe.svg');
     color: hsl(var(--Background-Primary));
+}
+
+.Banner-Vector {
+    width: 32px;
+    height: 32px;
+    fill: hsl(var(--Background-Primary)); 
+}
+
+@media (max-width: 1200px) {
+    .Banner {
+        margin-bottom: 48px;
+    }
 }
 
 /* Header */
