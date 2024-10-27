@@ -8,6 +8,8 @@
     --Image-Width: 200px;
     --Image-Height: 100%;
     --Image-Height-Mobile: 300px;
+    --Image-Height-Portfolio: 400px;
+    --Image-Height-Portfolio-Mobile: 200px;
     --Radius: 2px 12px 2px 12px;
     --Radius-Small: 2px 6px 2px 6px;
 }
@@ -189,19 +191,19 @@ Body {
     padding-right: 12px;
     gap: 12px;
     border-radius: var(--Radius);
-    background: hsl(var(--Accent)) url('Stripe.svg');
-    color: hsl(var(--Background-Primary));
+    border: 1px solid hsl(var(--Border-Color));
+    background: hsl(var(--Background-Primary)) url('Stripe.svg');
 }
 
 .Banner-Vector {
     width: 32px;
     height: 32px;
-    fill: hsl(var(--Background-Primary)); 
+    fill: hsl(var(--Text-Secondary)); 
 }
 
 @media (max-width: 1200px) {
     .Banner {
-        margin-bottom: 48px;
+        margin-bottom: 24px;
     }
 }
 
@@ -217,7 +219,7 @@ Body {
     .Header {
         margin-top: -24px;
     }
-    .Header.Flex {
+    .Header.No-Margin {
         margin-top: 0;
     }
 }
@@ -233,7 +235,6 @@ Body {
     overflow: hidden;
 }
 
-
 .Image-Thing {
     height: 24px;
     width: 100%;
@@ -241,6 +242,18 @@ Body {
     margin-right: -12px;
     padding-left: 12px;
     padding-right: 12px;
+}
+
+.Portfolio-Image {
+    border-radius: var(--Radius);
+    background: hsl(var(--Accent)) url('Twilight.gif');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: var(--Image-Height-Portfolio);
+    margin-bottom: 12px;
+    overflow: hidden;
 }
 
 .Credit-Vector {
@@ -325,6 +338,11 @@ hr {
     .Image-Thing {
         background: hsl(var(--Background-Primary));
     }
+
+    .Portfolio-Image {
+        height: var(--Image-Height-Portfolio-Mobile);
+    }
+
 }
 
 /* Link */
