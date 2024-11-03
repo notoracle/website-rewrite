@@ -97,6 +97,7 @@ Body {
 /* Navigate */
 
 .Navigate {
+    border-bottom: 1px solid hsl(var(--Border-Color));
     background-color: hsl(var(--Background-Primary));
     height: var(--Navigate-Height);
     width: 100%;
@@ -219,7 +220,7 @@ Body {
     .Header {
         margin-top: -24px;
     }
-    .Header.No-Margin {
+    .Header.Flex {
         margin-top: 0;
     }
 }
@@ -265,16 +266,17 @@ Body {
 
 .Title {
     font-family: 'Kalam';
-    font-size: 60px;
+    font-size: 48px;
     font-weight: 400;
     line-height: 1;
     margin-top: 0;
     margin-bottom: 0;
 }
 
+
 .Subtitle {
     color: hsl(var(--Text-Secondary));
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 400;
     margin-top: 0;
     margin-bottom: 12px;
@@ -342,7 +344,6 @@ hr {
 .Link {
     width: auto;
     display: flex;
-    flex-direction: row-reverse;
     align-items: flex-start;
     gap: 6px;
     color: hsl(var(--Text-Primary));
