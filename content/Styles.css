@@ -190,17 +190,6 @@ Body {
     image-rendering: smooth;
 }
 
-/* Portfolio */
-
-.Portfolio-Image {
-    width: 100%;
-    height: var(--Image-Height-Portfolio);
-    border-radius: var(--Radius);
-    background: hsl(var(--Border-Color)) url('Twilight.gif');
-    background-size: contain;
-    background-position: center;
-}
-
 /* Text */
 
 .Credit-Vector {
