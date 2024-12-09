@@ -199,9 +199,11 @@ Body {
 }
 
 .Title {
-    font-family: 'Kalam';
+    font-family: 'Alegreya SC';
     font-size: 48px;
-    font-weight: 400;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
     line-height: 1;
     margin-top: 0;
     margin-bottom: 0;
@@ -233,7 +235,6 @@ hr {
 }
 
 .Section {
-    font-family: 'Zilla Slab';
     font-size: 32px;
     font-weight: 400;
     margin-top: 0;
@@ -276,7 +277,6 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
     color: hsl(var(--Text-Primary));
     border-radius: var(--Radius);
     background-color: hsla(var(--Background-Primary));
@@ -288,10 +288,4 @@ hr {
 .Footer-Link:active {
     border-color: hsla(var(--Text-Primary));
     background-color: hsla(var(--Text-Primary), 0.2);
-}
-
-.Footer-Vector {
-    width: 32px;
-    height: 32px;
-    fill: hsl(var(--Text-Primary)); 
 }
