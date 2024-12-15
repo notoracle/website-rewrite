@@ -8,8 +8,8 @@
     --Image-Width: 200px;
     --Image-Height: 100%;
     --Image-Height-Mobile: 250px;
-    --Avatar-Height: 120px;
-    --Avatar-Width: 120px;
+    --Avatar-Height: 80px;
+    --Avatar-Width: 80px;
     --Radius: 2px 12px 2px 12px;
     --Radius-Small: 2px 6px 2px 6px;
 }
@@ -47,6 +47,11 @@ Body {
     color: hsl(var(--Text-Primary));
 }
 
+::Selection {
+    background-color: hsl(var(--Text-Primary));
+    color: hsl(var(--Background-Primary));
+}
+
 /* Wrap */
 
 .Wrap {
@@ -67,7 +72,6 @@ Body {
 .Wrap.Credit {
     display: flex;
     flex-direction: column;
-    gap: 0;
 }
 
 @media (max-width: 1200px) {
@@ -136,12 +140,14 @@ Body {
 
 .Navigate-Text {
     color: hsl(var(--Text-Primary));
+    height: calc(100% - 24px);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
     padding: 0 24px;
-    text-decoration-line: underline;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
     text-underline-offset: 4px;
 }
 
@@ -188,6 +194,11 @@ Body {
     background-position: center;
     background-size: cover;
     image-rendering: smooth;
+}
+
+.Credit .Image {
+    height: var(--Avatar-Height);
+    background: hsl(var(--Border-Color));
 }
 
 /* Text */
@@ -259,6 +270,12 @@ hr {
         padding-left: 12px;
         padding-right: 12px;
     }
+
+    .Credit .Image {
+        height: var(--Avatar-Height);
+        margin: 0;
+        padding: 0;
+    }
 }
 
 /* Footer */
@@ -281,6 +298,7 @@ hr {
     border-radius: var(--Radius);
     background-color: hsla(var(--Background-Primary));
     text-decoration: underline;
+    text-decoration-thickness: 1px;
     text-underline-offset: 4px;
 }
 
