@@ -72,6 +72,13 @@ Body {
 .Wrap.Credit {
     display: flex;
     flex-direction: column;
+    gap: 0;
+}
+
+.Space {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
 }
 
 @media (max-width: 1200px) {
@@ -103,6 +110,12 @@ Body {
         padding-top: 24px;
     }
 }
+@media (max-width: 810px) {
+    .Space {
+        flex-direction: column;
+    }
+}
+
 
 /* Navigate */
 
@@ -201,6 +214,16 @@ Body {
     background: hsl(var(--Border-Color));
 }
 
+@media (max-width: 1200px) {
+    .Image {
+        height: var(--Image-Height-Mobile);
+        margin-left: -12px;
+        margin-right: -12px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
 /* Text */
 
 .Credit-Vector {
@@ -261,29 +284,16 @@ hr {
     font-size: 32px;
 }
 
-@media (max-width: 1200px) {
-    .Image {
-        border-radius: 0;
-        height: var(--Image-Height-Mobile);
-        margin-left: -12px;
-        margin-right: -12px;
-        padding-left: 12px;
-        padding-right: 12px;
-    }
-
-    .Credit .Image {
-        height: var(--Avatar-Height);
-        margin: 0;
-        padding: 0;
-    }
-}
-
 /* Footer */
 
 .Footer {
     width: 100%;
     gap: 12px;
     display: flex;
+}
+
+.Wrap.Credit .Footer {
+    width: auto;
 }
 
 .Footer-Link {
