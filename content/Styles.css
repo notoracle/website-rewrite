@@ -226,12 +226,6 @@ Body {
 
 /* Text */
 
-.Credit-Vector {
-    width: 32px;
-    height: 32px;
-    fill:hsl(var(--Text-Primary));
-}
-
 .Title {
     font-family: 'Alegreya SC';
     font-size: 48px;
