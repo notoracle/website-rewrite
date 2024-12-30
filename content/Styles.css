@@ -191,7 +191,7 @@ Body {
 }
 
 @media (max-width: 810px) {
-    .Header.Credit {
+    .Credit .Header {
         margin-top: 0;
     }
 }
@@ -207,11 +207,6 @@ Body {
     background-position: center;
     background-size: cover;
     image-rendering: smooth;
-}
-
-.Credit .Image {
-    height: var(--Avatar-Height);
-    background: hsl(var(--Border-Color));
 }
 
 @media (max-width: 1200px) {
@@ -286,7 +281,7 @@ hr {
     display: flex;
 }
 
-.Wrap.Credit .Footer {
+.Credit .Footer {
     width: auto;
 }
 
