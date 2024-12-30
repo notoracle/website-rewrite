@@ -112,6 +112,7 @@ Body {
 }
 @media (max-width: 810px) {
     .Space {
+        align-items: flex-start;
         flex-direction: column;
     }
 }
