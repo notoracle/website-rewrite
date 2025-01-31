@@ -167,10 +167,10 @@ Body {
 
 @media (max-width: 810px) {
     .Navigate {
-        background-color: hsl(var(--Background-Primary));
         bottom: 0;
         width: calc(var(--Page-Width-Mobile));
         height: calc(var(--Navigate-Height-Mobile) + env(safe-area-inset-bottom));
+        background-color: hsl(var(--Background-Primary));
     }
 
     .Navigate-Wrap {
