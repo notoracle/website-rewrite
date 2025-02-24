@@ -133,7 +133,6 @@ Body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
     padding: 0 24px;
     text-decoration: underline;
     text-decoration-thickness: 1px;
