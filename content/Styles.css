@@ -172,7 +172,7 @@ Body {
     height: var(--Image-Height);
     overflow: hidden;
     border-radius: var(--Radius);
-    background: url('bee_animated.gif');
+    background: url('oracle.PNG');
     background-position: center;
     background-size: cover;
     image-rendering: smooth;
