@@ -18,7 +18,7 @@
     :root {
         --Text-Primary: 22, 100%, 90%;
         --Text-Secondary: 22, 40%, 70%;
-        --Background-Primary: 344, 16%, 12%;
+        --Background-Primary: 340, 10%, 10%;
         --Border-Color: 344, 10%, 25%;
         --Accent: 45, 100%, 45%;
     }
@@ -66,7 +66,7 @@ Body {
     padding-right: 24px;
 }
 
-.Wrap#Image {
+.Wrap:has(div.Image) {
     display: grid;
     grid-template-columns: var(--Image-Width) 1fr;
     gap: 24px;
@@ -81,7 +81,7 @@ Body {
         margin-bottom: calc(var(--Navigate-Height) + 24px);
     }
     
-    .Wrap#Image {
+    .Wrap:has(div.Image) {
         display: flex;
         flex-direction: column;
     }
@@ -192,23 +192,18 @@ Body {
 /* Text */
 
 .Title {
-    font-family: 'Alegreya SC';
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    line-height: 1;
     margin-top: 0;
     margin-bottom: 0;
 }
 
 
 .Subtitle {
-    color: hsl(var(--Text-Secondary));
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 400;
     margin-top: 0;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
     display: inline-block;
 }
 
@@ -232,15 +227,6 @@ hr {
     font-weight: 400;
     margin-top: 0;
     margin-bottom: 12px;
-}
-
-.Att-Link {
-    color: hsl(var(--Text-Primary));
-    width: 100%;
-    display: block;
-    text-decoration-line: underline;
-    text-underline-offset: 4px;
-    font-size: 32px;
 }
 
 /* Footer */
