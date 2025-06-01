@@ -172,12 +172,12 @@ Body {
 /* Grid */
 
 div[aria-label="Header"]:has(.Image) {
-    gap: 0 24px;
-    grid-template: auto auto / var(--Image-Width) auto;
     display: grid;
+    grid-template: auto auto / var(--Image-Width) auto;
+    gap: 0 24px;
 }
 div[aria-label="Header"]:has(.Image) > .Image {
-    grid-row: 1 / 3 !important;
+    grid-row: 1 / 3;
 }
 div[aria-label="Header"]:has(.Image) > .Text,
 div[aria-label="Header"]:has(.Image) > .Title {
