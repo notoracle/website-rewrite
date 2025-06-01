@@ -6,8 +6,8 @@
     --Navigate-Height-Mobile: 80px;
     --Emoji-Height: 32px;
     --Emoji-Width: 32px;
-    --Image-Height: 80px;
-    --Image-Width: 80px;
+    --Image-Height: 64px;
+    --Image-Width: 64px;
     --Round: 12px;
 }
 
@@ -16,7 +16,7 @@
         --Text-Primary: HSL(22, 100%, 90%);
         --Text-Secondary: HSL(22, 20%, 60%);
         --Background-Primary: HSL(22, 10%, 10%);
-        --Border-Color: 344, 10%, 25%;
+        --Border-Color: HSL(22, 10%, 30%);
         --Accent: 45, 100%, 45%;
     }
 }
@@ -74,6 +74,7 @@ Body {
     align-items: center;
     justify-content: center;
     padding: 0 24px;
+    text-decoration-color: var(--Text-Secondary);
     text-decoration-line: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 2px;
@@ -119,6 +120,17 @@ Body {
 
 /* Link */
 
+.Link {
+    text-decoration-color: var(--Text-Secondary);
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+}
+
+.Link:not(:has(~ .B-Margin24)) {
+    margin-bottom: 0 !important;
+}
+
 /* Fixin */
 
 .Bold {
@@ -155,10 +167,6 @@ Body {
     margin-top: 24px;
 }
 
-.R-Margin24 {
-    margin-right: 24px;
-}
-
 /* Padding */
 
 .B-Padding24 {
@@ -169,17 +177,9 @@ Body {
     padding-top: 24px;
 }
 
-/* Grid */
+/* Footer */
 
-div[aria-label="Header"]:has(.Image) {
-    display: grid;
-    grid-template: auto auto / var(--Image-Width) auto;
-    gap: 0 24px;
-}
-div[aria-label="Header"]:has(.Image) > .Image {
-    grid-row: 1 / 3;
-}
-div[aria-label="Header"]:has(.Image) > .Text,
-div[aria-label="Header"]:has(.Image) > .Title {
-    align-self: end;
+div[aria-label="Footer"] {
+    flex-direction: column;
+    display: inline-flex;
 }
