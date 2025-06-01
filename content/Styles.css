@@ -127,10 +127,6 @@ Body {
     text-underline-offset: 2px;
 }
 
-.Link:not(:has(~ .B-Margin24)) {
-    margin-bottom: 0 !important;
-}
-
 /* Fixin */
 
 .Bold {
@@ -167,6 +163,10 @@ Body {
     margin-top: 24px;
 }
 
+.B-Margin12 {
+    margin-bottom: 12px;
+}
+
 /* Padding */
 
 .B-Padding24 {
@@ -181,5 +181,5 @@ Body {
 
 div[aria-label="Footer"] {
     flex-direction: column;
-    display: inline-flex;
+    display: flex;
 }
