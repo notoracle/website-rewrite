@@ -4,11 +4,6 @@
     --Page-Width-Mobile: 100%;
     --Navigate-Height: 80px;
     --Navigate-Height-Mobile: 80px;
-    --Emoji-Height: 32px;
-    --Emoji-Width: 32px;
-    --Image-Height: 64px;
-    --Image-Width: 64px;
-    --Round: 12px;
 }
 
 @media (prefers-color-scheme: Dark) {
@@ -17,17 +12,15 @@
         --Text-Secondary: HSL(22, 20%, 60%);
         --Background-Primary: HSL(22, 10%, 10%);
         --Border-Color: HSL(22, 10%, 30%);
-        --Accent: 45, 100%, 45%;
     }
 }
 
 @media (prefers-color-scheme: Light) {
     :root {
-        --Text-Primary: 344, 16%, 12%;
-        --Text-Secondary: 344, 12%, 40%;
-        --Background-Primary: 22, 50%, 90%;
-        --Border-Color: 22, 28%, 65%;
-        --Accent: 45, 100%, 35%;
+        --Text-Primary: HSL(0, 0%, 10%);
+        --Text-Secondary: HSL(0, 0%, 60%);
+        --Background-Primary: HSL(0, 0%, 100%);
+        --Border-Color: HSL(0, 0%, 90%);
     }
 }
 
@@ -135,22 +128,6 @@ Body {
 
 .Subtle {
     color: var(--Text-Secondary) !important;
-}
-
-.Emoji {
-    max-width: var(--Emoji-Width);
-    vertical-align: middle;
-}
-
-/* Image */
-
-.Image {
-    height: var(--Image-Height);
-    width: var(--Image-Width);
-    max-height: var(--Image-Height);
-    max-width: var(--Image-Width);
-    background-image: url(oracle.PNG);
-    background-size: cover;
 }
 
 /* Margins */
