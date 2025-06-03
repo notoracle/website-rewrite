@@ -3,7 +3,10 @@
     --Page-Width: 600px;
     --Page-Width-Mobile: 100%;
     --Navigate-Height: 80px;
-    --Navigate-Height-Mobile: 80px;
+    --Image-Height: 60px;
+    --Image-Width: 60px;
+    --Image-URL: url('oracle.PNG');
+    --Radius-12: 12px;
 }
 
 @media (prefers-color-scheme: Dark) {
@@ -11,6 +14,7 @@
         --Text-Primary: HSL(22, 100%, 90%);
         --Text-Secondary: HSL(22, 20%, 60%);
         --Background-Primary: HSL(22, 10%, 10%);
+        --Background-Alpha: HSLA(22, 10%, 10%, .5);
         --Border-Color: HSL(22, 10%, 30%);
     }
 }
@@ -73,6 +77,12 @@ Body {
     text-underline-offset: 2px;
 }
 
+@media (max-width: 768px) {
+    .Navigate-Text {
+        width: 100%;
+    }
+}
+
 /* Wrap */
 
 .Wrap {
@@ -84,7 +94,7 @@ Body {
     padding-bottom: calc(var(--Navigate-Height) + 24px);
 }
 
-@media  (max-width: 768px) {
+@media (max-width: 768px) {
     .Wrap {
         max-width: var(--Page-Width-Mobile);
     }
@@ -130,6 +140,15 @@ Body {
     color: var(--Text-Secondary) !important;
 }
 
+/* Images */
+
+.Image {
+    height: var(--Image-Height);
+    width: var(--Image-Width);
+    background-size: cover !important;
+    background-image: var(--Image-URL);
+}
+
 /* Margins */
 
 .B-Margin24 {
@@ -152,6 +171,17 @@ Body {
 
 .T-Padding24 {
     padding-top: 24px;
+}
+
+/* Border & Radius */
+
+.Border-1 {
+    border-color: var(--Border-Color);
+    border-style: solid !important;
+}
+
+.Radius12 {
+    border-radius: var(--Radius-12);
 }
 
 /* Footer */
