@@ -3,10 +3,9 @@
     --Page-Width: 600px;
     --Page-Width-Mobile: 100%;
     --Navigate-Height: 80px;
-    --Image-Height: 60px;
-    --Image-Width: 60px;
+    --Image-Height: 40px;
+    --Image-Width: 40px;
     --Image-URL: url('oracle.PNG');
-    --Radius-12: 12px;
 }
 
 @media (prefers-color-scheme: Dark) {
@@ -75,12 +74,6 @@ Body {
     text-decoration-line: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 2px;
-}
-
-@media (max-width: 768px) {
-    .Navigate-Text {
-        width: 100%;
-    }
 }
 
 /* Wrap */
@@ -159,10 +152,6 @@ Body {
     margin-top: 24px;
 }
 
-.B-Margin12 {
-    margin-bottom: 12px;
-}
-
 /* Padding */
 
 .B-Padding24 {
@@ -171,22 +160,4 @@ Body {
 
 .T-Padding24 {
     padding-top: 24px;
-}
-
-/* Border & Radius */
-
-.Border-1 {
-    border-color: var(--Border-Color);
-    border-style: solid !important;
-}
-
-.Radius12 {
-    border-radius: var(--Radius-12);
-}
-
-/* Footer */
-
-div[aria-label="Footer"] {
-    flex-direction: column;
-    display: flex;
 }
