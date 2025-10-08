@@ -3,9 +3,13 @@
     --Page-Width: 600px;
     --Page-Width-Mobile: 100%;
     --Navigate-Height: 80px;
-    --Image-Height: 40px;
-    --Image-Width: 40px;
-    --Image-URL: url('oracle.PNG');
+    --Image-Height: 80px;
+    --Image-Width: 80px;
+    --Image-URL: url('photo.PNG');
+    --Radius-SM: 3px;
+    --Radius-MD: 6px;
+    --Radius-LG: 12px;
+    --Radius-XL: 900px;
 }
 
 @media (prefers-color-scheme: Dark) {
@@ -160,4 +164,10 @@ Body {
 
 .T-Padding24 {
     padding-top: 24px;
+}
+
+/* Display */
+
+.Block {
+    display: block;
 }
