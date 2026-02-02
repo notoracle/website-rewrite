@@ -26,6 +26,7 @@
     :root {
         --Text-Primary: HSL(0, 0%, 10%);
         --Text-Secondary: HSL(0, 0%, 60%);
+        --Text-Alpha: HSLA(0, 0%, 10%, .15);
         --Background-Primary: HSL(0, 0%, 100%);
         --Border-Color: HSL(0, 0%, 90%);
     }
@@ -80,6 +81,10 @@ Body {
     text-underline-offset: 2px;
 }
 
+.Navigate-Text.Selected {
+    font-weight: 600;
+}
+
 /* Wrap */
 
 .Wrap {
@@ -130,7 +135,7 @@ Body {
 /* Fixin */
 
 .Bold {
-    font-weight: 500 !important;
+    font-weight: 600 !important;
 }
 
 .Subtle {
@@ -142,6 +147,7 @@ Body {
 .Image {
     height: var(--Image-Height);
     width: var(--Image-Width);
+    border-radius: var(--Radius-MD);
     background-size: cover !important;
     background-image: var(--Image-URL);
 }
