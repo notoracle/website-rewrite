@@ -240,5 +240,9 @@ Body {
 /* Button */
 
 .N-Button {
-   background: var(--Button-Primary);
+    padding-left: var(--Variable-24);
+    padding-right: var(--Variable-24);
+    padding-top: var(--Variable-12);
+    padding-bottom: var(--Variable-12);
+    background: var(--Button-Primary);
 }
