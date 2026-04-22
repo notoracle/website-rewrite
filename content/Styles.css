@@ -135,11 +135,16 @@ Body {
 /* Link */
 
 .Link {
+    transition: text-decoration-color 0.1s ease-in;
     color: var(--Text-Primary);
     text-decoration-color: var(--Text-Secondary);
     text-decoration-line: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 2px;
+}
+
+.Link:Hover, .Link:Active {
+    text-decoration-color: var(--Text-Primary);
 }
 
 /* Fixin */
