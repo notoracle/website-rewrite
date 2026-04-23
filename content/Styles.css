@@ -25,6 +25,7 @@
         --Button-Primary: HSL(22, 10%, 10%);
         --Button-Secondary: HSL(22, 10%, 10%);
         --Border-Color: HSL(22, 10%, 30%);
+        --Accent-Primary: HSL(255, 100%, 50%);
     }
 }
 
@@ -38,6 +39,7 @@
         --Button-Primary: HSL(0, 0%, 90%);
         --Button-Secondary: HSL(0, 0%, 80%);
         --Border-Color: HSL(0, 0%, 90%);
+        --Accent-Primary: HSL(255, 100%, 50%);
     }
 }
 
@@ -78,7 +80,7 @@ Body {
 }
 
 .Navigate-Text {
-    color: var(--Text-Primary);
+    color: var(--Text-Secondary);
     height: 100%;
     display: flex;
     align-items: center;
@@ -88,10 +90,13 @@ Body {
     text-decoration-line: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 2px;
+    gap: var(--Variable-12);
 }
 
 .Navigate-Text.Selected {
+    color: var(--Text-Primary);
     font-weight: 600;
+    text-decoration-color: var(--Text-Primary);
 }
 
 /* Wrap */
@@ -128,8 +133,9 @@ Body {
     margin-top: unset !important;
     margin-bottom: 12px;
 }
-.Paragraph:last-of-type {
-    margin-bottom: unset !important;
+
+.Small {
+    font-size: 16px;
 }
 
 /* Link */
@@ -145,6 +151,10 @@ Body {
 
 .Link:Hover, .Link:Active {
     text-decoration-color: var(--Text-Primary);
+}
+
+.No-Decoration {
+    text-decoration-thickness: 0 !important;
 }
 
 /* Fixin */
@@ -164,6 +174,7 @@ Body {
     width: var(--Image-Width);
     background-size: cover !important;
     background-image: var(--Image-URL);
+    border-radius: var(--Radius-SM);
 }
 
 /* Radius */
@@ -194,6 +205,14 @@ Body {
     margin-top:  var(--Variable-24);
 }
 
+.L-Margin24 {
+    margin-left: var(--Variable-24);
+}
+
+.R-Margin24 {
+    margin-right: var(--Variable-24);
+}
+
 /* Padding */
 
 .B-Padding12 {
@@ -212,6 +231,10 @@ Body {
     padding-right: var(--Variable-12);
 }
 
+.A-Padding12 {
+    padding: var(--Variable-12);
+}
+
 .B-Padding24 {
     padding-bottom:  var(--Variable-24);
 }
@@ -228,6 +251,17 @@ Body {
     padding-right: var(--Variable-24);
 }
 
+.A-Padding24 {
+    padding: var(--Variable-24);
+}
+
+/* Gap */
+
+.Gap12 {
+    row-gap: var(--Variable-12);
+    column-gap: var(--Variable-12);
+}
+
 /* Display */
 
 .Block {
@@ -242,12 +276,24 @@ Body {
     flex-direction: column;
 }
 
-/* Button */
+.Row-Flex {
+    flex-direction: row;
+}
 
-.N-Button {
-    padding-left: var(--Variable-24);
-    padding-right: var(--Variable-24);
-    padding-top: var(--Variable-12);
-    padding-bottom: var(--Variable-12);
-    background: var(--Button-Primary);
+.Space-Between {
+    justify-content: space-between;
+}
+
+.Wrap-Flex {
+    flex-wrap: wrap;
+}
+
+/* BG Colors */
+
+.Color-Button {
+    background-color: var(--Button-Primary);
+}
+
+.Color-Button:Hover, .Color-Button:Active {
+    background-color: var(--Button-Secondary);
 }
