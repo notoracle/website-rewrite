@@ -13,6 +13,9 @@
     --Variable-6: 6px;
     --Variable-12: 12px;
     --Variable-24: 24px;
+    --Font-SM: 16px;
+    --Font-MD: 20px;
+    --Font-Family: 'Inclusive Sans', Sans-Serif;
 }
 
 @media (prefers-color-scheme: Dark) {
@@ -36,8 +39,8 @@
         --Link-Primary: HSL(220, 100%, 50%);
         --Link-Secondary: HSL(220, 100%, 50%, 0.5);
         --Background-Primary: HSL(0, 0%, 100%);
-        --Button-Primary: HSL(0, 0%, 90%);
-        --Button-Secondary: HSL(0, 0%, 80%);
+        --Clickable-Primary: HSL(0, 0%, 90%);
+        --Clickable-Secondary: HSL(0, 0%, 80%);
         --Border-Color: HSL(0, 0%, 90%);
         --Accent-Primary: HSL(255, 100%, 50%);
     }
@@ -48,55 +51,38 @@
 Body {
     margin: 0;
     padding: 0;
-    background-color: var(--Background-Primary);
-    text-rendering: optimizeLegibility;
-    font-family: 'Inclusive Sans', sans-serif;
+    font-family: var(--Font-Family);
+    font-size: var(--Font-MD);
     font-weight: 400;
-    font-size: 20px;
     color: var(--Text-Primary);
+    background-color: var(--Background-Primary);
+    
 }
 
 /* Navigate */
 
 .Navigate {
-    background-color: var(--Background-Primary);
     height: var(--Navigate-Height);
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    box-sizing: border-box;
-    z-index: 10;
-    left: 0;
-    right: 0;
     margin-left: auto;
     margin-right: auto;
+    position: fixed;
+    background-color: var(--Background-Primary);
+    z-index: var(--Variable-24);
 }
 
 .Navigate-Wrap {
-    height: 100%;
-    display: flex;
+    height: var(--Navigate-Height);
     align-items: center;
+    display: flex;
 }
 
 .Navigate-Text {
-    color: var(--Text-Secondary);
-    height: 100%;
-    display: flex;
-    align-items: center;
+    height: var(--Navigate-Height);
     justify-content: center;
-    padding: 0 24px;
-    text-decoration-color: var(--Text-Secondary);
-    text-decoration-line: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 2px;
-    gap: var(--Variable-12);
-}
-
-.Navigate-Text.Selected {
-    color: var(--Text-Primary);
-    font-weight: 600;
-    text-decoration-color: var(--Text-Primary);
+    align-items: center;
+    display: flex;
+    padding: 0 var(--Variable-24);
 }
 
 /* Wrap */
@@ -104,10 +90,10 @@ Body {
 .Wrap {
     max-width: var(--Page-Width);
     margin: auto;
-    padding-top: calc(var(--Navigate-Height) + 24px);
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-bottom: calc(var(--Navigate-Height) + 24px);
+    padding-top: calc(var(--Navigate-Height) + var(--Variable-24));
+    padding-left: var(--Variable-24);
+    padding-right: var(--Variable-24);
+    padding-bottom: calc(var(--Navigate-Height) + var(--Variable-24));
 }
 
 @media (max-width: 768px) {
@@ -157,6 +143,20 @@ Body {
     text-decoration-thickness: 0 !important;
 }
 
+/* Clickable */
+
+.Clickable {
+    padding-left: var(--Variable-24);
+    padding-right: var(--Variable-24);
+    padding-top: var(--Variable-12);
+    padding-bottom: var(--Variable-12);
+    background-color: var(--Clickable-Primary);
+}
+
+.Clickable:Hover, .Clickable:Active {
+    background-color: var(--Clickable-Secondary);
+}
+
 /* Fixin */
 
 .Bold {
@@ -174,10 +174,25 @@ Body {
     width: var(--Image-Width);
     background-size: cover !important;
     background-image: var(--Image-URL);
-    border-radius: var(--Radius-SM);
 }
 
 /* Radius */
+
+.SM-Radius {
+    border-radius: var(--Radius-SM);
+}
+
+.MD-Radius {
+    border-radius: var(--Radius-MD);
+}
+
+.LG-Radius {
+    border-radius: var(--Radius-LG);
+}
+
+.XL-Radius {
+    border-radius: var(--Radius-XL);
+}
 
 /* Margins */
 
