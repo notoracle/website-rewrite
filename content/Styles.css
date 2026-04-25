@@ -13,6 +13,7 @@
     --Variable-6: 6px;
     --Variable-12: 12px;
     --Variable-24: 24px;
+    --Variable-48: 60px;
     --Font-MD: 1.125em;
     --Font-LG: 1.5em;
     --Font-Family: 'Inclusive Sans', Sans-Serif;
@@ -20,15 +21,12 @@
 
 @media (prefers-color-scheme: Dark) {
     :root {
-        --Text-Primary: HSL(22, 100%, 90%);
-        --Text-Secondary: HSL(22, 20%, 60%);
-        --Link-Primary: HSL(220, 100%, 50%);
-        --Link-Secondary: HSL(220, 100%, 50%, 0.5);
-        --Background-Primary: HSL(22, 10%, 10%);
-        --Button-Primary: HSL(22, 10%, 10%);
-        --Button-Secondary: HSL(22, 10%, 10%);
-        --Border-Color: HSL(22, 10%, 30%);
-        --Accent-Primary: HSL(255, 100%, 50%);
+        --Text-Primary: HSL(0, 0%, 90%);
+        --Text-Secondary: HSL(0, 0%, 60%);;
+        --Background-Primary: HSL(0, 0%, 5%);
+        --Black-Primary: HSL(0, 0%, 90%);
+        --Black-Secondary: HSL(0, 0%, 90%);
+        --Black-Text: HSL(0, 0%, 5%);
     }
 }
 
@@ -36,13 +34,10 @@
     :root {
         --Text-Primary: HSL(0, 0%, 10%);
         --Text-Secondary: HSL(0, 0%, 60%);
-        --Link-Primary: HSL(220, 100%, 50%);
-        --Link-Secondary: HSL(220, 100%, 50%, 0.5);
         --Background-Primary: HSL(0, 0%, 100%);
         --Black-Primary: HSL(0, 0%, 10%);
-        --Black-Secondary: HSL(0, 0%, 20%);
+        --Black-Secondary: HSL(0, 0%, 10%);
         --Black-Text: HSL(0, 0%, 90%);
-        --Border-Color: HSL(0, 0%, 90%);
     }
 }
 
@@ -93,7 +88,7 @@ Body {
     padding-top: calc(var(--Navigate-Height) + var(--Variable-24));
     padding-left: var(--Variable-24);
     padding-right: var(--Variable-24);
-    padding-bottom: calc(var(--Navigate-Height) + var(--Variable-24));
+    padding-bottom: var(--Variable-24);
 }
 
 @media (max-width: 768px) {
@@ -124,16 +119,11 @@ Body {
 /* Link */
 
 .Link {
-    transition: text-decoration-color 0.1s ease-in;
     color: var(--Text-Primary);
-    text-decoration-color: var(--Text-Secondary);
+    text-decoration-color: var(--Text-Primary);
     text-decoration-line: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 2px;
-}
-
-.Link:Hover, .Link:Active {
-    text-decoration-color: var(--Text-Primary);
 }
 
 .No-Decoration {
@@ -142,17 +132,16 @@ Body {
 
 /* Clickable */
 
-.Clickable {
+.Black-Button {
     padding-left: var(--Variable-24);
     padding-right: var(--Variable-24);
-    padding-top: var(--Variable-12);
-    padding-bottom: var(--Variable-12);
-    box-shadow: var(--Black-Shadow);
-    background-color: var(--Black-Primary);
+    min-height: var(--Variable-48);
+    text-decoration-color: var(--Black-Text) !important;
     color: var(--Black-Text);
+    background-color: var(--Black-Primary);
 }
 
-.Clickable:Hover, .Clickable:Active {
+.Black-Button:Hover, .Black-Button:Active {
     background-color: var(--Black-Secondary);
 }
 
@@ -203,6 +192,10 @@ Body {
     margin-top:  var(--Variable-24);
 }
 
+.B-Margin12 {
+    margin-bottom: var(--Variable-12);
+}
+
 /* Display */
 
 .Flex {
@@ -215,6 +208,14 @@ Body {
 
 .Align-Start {
     align-items: flex-start;
+}
+
+.Align-Center {
+    align-items: center;
+}
+
+.Justify-Start {
+    justify-content: flex-start;
 }
 
 .I-Flex {
