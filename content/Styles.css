@@ -2,6 +2,7 @@
 :root {
     --Page-Width: 600px;
     --Page-Width-Mobile: 100%;
+    --Menu-Width: 160px;
     --Navigate-Height: 80px;
     --Image-Height: 80px;
     --Image-Width: 80px;
@@ -15,7 +16,7 @@
     --Variable-24: 24px;
     --Font-MD: 1.125em;
     --Font-LG: 2.125em;
-    --Font-Family: 'Inclusive Sans', Sans-Serif;
+    --Font-Family: 'Verdana', Sans-Serif;
     --Font-Header: 'Linux Libertine', 'Georgia', 'Times', 'Source Serif 4', Serif;
 }
 
@@ -36,6 +37,8 @@
         --Text-Secondary: HSL(0, 0%, 40%);
         --Background-Primary: HSL(0, 0%, 100%);
         --Background-Secondary: HSL(0, 0%, 90%);
+        --Link-Primary: HSL(225, 60%, 40%);
+        --Link-Secondary: HSLA(225, 60%, 40%, 50%);
     }
 }
 
@@ -52,30 +55,21 @@ Body {
     
 }
 
-/* Navigate */
+/* MenuBar */
 
-.Navigate {
+.MenuBar {
     height: var(--Navigate-Height);
     width: var(--Page-Width-Mobile);
     position: fixed;
-    margin-left: auto;
-    margin-right: auto;
     background-color: var(--Background-Primary);
 }
 
-.Navigate-Wrap {
-    height: var(--Navigate-Height);
-    align-items: center;
-    display: flex;
-}
-
-.Navigate-Text {
+.MenuBar > .Link {
     height: var(--Navigate-Height);
     padding: 0 var(--Variable-24);
-    background-color: var(--Background-Primary);
 }
 
-.Navigate-Text:Hover, .Navigate-Text:Active {
+.MenuBar > .Link:Hover {
     background-color: var(--Background-Secondary);
 }
 
@@ -87,7 +81,7 @@ Body {
     padding-top: calc(var(--Navigate-Height) + var(--Variable-24));
     padding-left: var(--Variable-24);
     padding-right: var(--Variable-24);
-    padding-bottom: var(--Variable-24);
+    padding-bottom: calc(var(--Navigate-Height) + var(--Variable-24));
 }
 
 @media (max-width: 768px) {
@@ -121,9 +115,9 @@ Body {
 
 .Link {
     font-size: var(--Font-MD);
-    text-decoration-color: var(--Text-Secondary);
-    text-decoration-thickness: 1px;
-    color: var(--Text-Primary);
+    text-decoration-color: var(--Link-Secondary);
+    text-decoration-thickness: 2px;
+    color: var(--Link-Primary);
 }
 
 .Link:Visited {
@@ -150,6 +144,9 @@ Body {
 .Image {
     height: var(--Image-Height);
     width: var(--Image-Width);
+    outline-width: 1px;
+    outline-offset: -1px;
+    outline-style: solid;
     background-size: cover !important;
     background-image: var(--Image-URL);
 }
@@ -174,6 +171,10 @@ Body {
     display: flex;
 }
 
+.I-Flex {
+    display: inline-flex;
+}
+
 .Column-Flex {
     flex-direction: column;
 }
@@ -184,12 +185,4 @@ Body {
 
 .Align-Center {
     align-items: center;
-}
-
-.Justify-Start {
-    justify-content: flex-start;
-}
-
-.I-Flex {
-    display: inline-flex;
 }
