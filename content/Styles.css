@@ -13,10 +13,10 @@
     --Variable-6: 6px;
     --Variable-12: 12px;
     --Variable-24: 24px;
-    --Variable-48: 60px;
     --Font-MD: 1.125em;
-    --Font-LG: 1.5em;
+    --Font-LG: 2.125em;
     --Font-Family: 'Inclusive Sans', Sans-Serif;
+    --Font-Header: 'Linux Libertine', 'Georgia', 'Times', 'Source Serif 4', Serif;
 }
 
 @media (prefers-color-scheme: Dark) {
@@ -33,11 +33,9 @@
 @media (prefers-color-scheme: Light) {
     :root {
         --Text-Primary: HSL(0, 0%, 10%);
-        --Text-Secondary: HSL(0, 0%, 60%);
+        --Text-Secondary: HSL(0, 0%, 40%);
         --Background-Primary: HSL(0, 0%, 100%);
-        --Black-Primary: HSL(0, 0%, 10%);
-        --Black-Secondary: HSL(0, 0%, 10%);
-        --Black-Text: HSL(0, 0%, 90%);
+        --Background-Secondary: HSL(0, 0%, 90%);
     }
 }
 
@@ -73,11 +71,12 @@ Body {
 
 .Navigate-Text {
     height: var(--Navigate-Height);
-    justify-content: center;
-    align-items: center;
-    display: flex;
     padding: 0 var(--Variable-24);
-    color: var(--Clickable-Text) !important;
+    background-color: var(--Background-Primary);
+}
+
+.Navigate-Text:Hover, .Navigate-Text:Active {
+    background-color: var(--Background-Secondary);
 }
 
 /* Wrap */
@@ -102,6 +101,8 @@ Body {
 .Title {
     margin-top: unset !important;
     margin-bottom: unset !important;
+    font-weight: 400 !important;
+    font-family: var(--Font-Header);
     font-size: var(--Font-LG);
 }
 
@@ -119,30 +120,19 @@ Body {
 /* Link */
 
 .Link {
+    font-size: var(--Font-MD);
+    text-decoration-color: var(--Text-Secondary);
+    text-decoration-thickness: 1px;
     color: var(--Text-Primary);
+}
+
+.Link:Visited {
     text-decoration-color: var(--Text-Primary);
-    text-decoration-line: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 2px;
+    color: var(--Text-Primary);
 }
 
 .No-Decoration {
     text-decoration: none !important;
-}
-
-/* Clickable */
-
-.Black-Button {
-    padding-left: var(--Variable-24);
-    padding-right: var(--Variable-24);
-    min-height: var(--Variable-48);
-    text-decoration-color: var(--Black-Text) !important;
-    color: var(--Black-Text);
-    background-color: var(--Black-Primary);
-}
-
-.Black-Button:Hover, .Black-Button:Active {
-    background-color: var(--Black-Secondary);
 }
 
 /* Fixin */
@@ -162,24 +152,6 @@ Body {
     width: var(--Image-Width);
     background-size: cover !important;
     background-image: var(--Image-URL);
-}
-
-/* Radius */
-
-.SM-Radius {
-    border-radius: var(--Radius-SM);
-}
-
-.MD-Radius {
-    border-radius: var(--Radius-MD);
-}
-
-.LG-Radius {
-    border-radius: var(--Radius-LG);
-}
-
-.XL-Radius {
-    border-radius: var(--Radius-XL);
 }
 
 /* Margins */
