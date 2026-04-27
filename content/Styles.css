@@ -1,5 +1,12 @@
 
 :root {
+    --Text-Primary: HSL(0, 0%, 10%);
+    --Text-Secondary: HSL(0, 0%, 40%);
+    --Background-Primary: HSL(0, 0%, 100%);
+    --Background-Secondary: HSL(0, 0%, 90%);
+    --Link-Primary: HSL(225, 60%, 40%);
+    --Link-Secondary: HSLA(225, 60%, 40%, 50%);
+    --Link-Click: HSL(270, 60%, 40%);
     --Page-Width: 600px;
     --Page-Width-Mobile: 100%;
     --Menu-Width: 160px;
@@ -18,28 +25,6 @@
     --Font-LG: 2.125em;
     --Font-Family: 'Verdana', Sans-Serif;
     --Font-Header: 'Linux Libertine', 'Georgia', 'Times', 'Source Serif 4', Serif;
-}
-
-@media (prefers-color-scheme: Dark) {
-    :root {
-        --Text-Primary: HSL(0, 0%, 90%);
-        --Text-Secondary: HSL(0, 0%, 60%);;
-        --Background-Primary: HSL(0, 0%, 5%);
-        --Black-Primary: HSL(0, 0%, 90%);
-        --Black-Secondary: HSL(0, 0%, 90%);
-        --Black-Text: HSL(0, 0%, 5%);
-    }
-}
-
-@media (prefers-color-scheme: Light) {
-    :root {
-        --Text-Primary: HSL(0, 0%, 10%);
-        --Text-Secondary: HSL(0, 0%, 40%);
-        --Background-Primary: HSL(0, 0%, 100%);
-        --Background-Secondary: HSL(0, 0%, 90%);
-        --Link-Primary: HSL(225, 60%, 40%);
-        --Link-Secondary: HSLA(225, 60%, 40%, 50%);
-    }
 }
 
 /* Body */
@@ -120,9 +105,14 @@ Body {
     color: var(--Link-Primary);
 }
 
+.Link:Active {
+    text-decoration-color: var(--Link-Click);
+    color: var(--Link-Click);
+}
+
 .Link:Visited {
-    text-decoration-color: var(--Text-Primary);
-    color: var(--Text-Primary);
+    text-decoration-color: var(--Link-Secondary);
+    color: var(--Link-Primary);
 }
 
 .No-Decoration {
@@ -144,6 +134,7 @@ Body {
 .Image {
     height: var(--Image-Height);
     width: var(--Image-Width);
+    outline-color: HSL(0, 0%, 0%);
     outline-width: 1px;
     outline-offset: -1px;
     outline-style: solid;
