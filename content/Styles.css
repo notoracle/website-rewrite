@@ -105,6 +105,12 @@ Body {
     color: var(--Link-Primary);
 }
 
+/* :Hover Only Appears on Desktop or Laptop Devices */
+
+.Link:Hover {
+    text-decoration-color: var(--Link-Primary);
+}
+
 .Link:Active {
     text-decoration-color: var(--Link-Click);
     color: var(--Link-Click);
