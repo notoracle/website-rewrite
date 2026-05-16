@@ -9,20 +9,16 @@
     --Link-Click: HSL(270, 60%, 40%);
     --Page-Width: 600px;
     --Page-Width-Mobile: 100%;
-    --Menu-Width: 160px;
     --Navigate-Height: 80px;
     --Image-Height: 80px;
     --Image-Width: 80px;
     --Image-URL: url('photo.PNG');
-    --Radius-SM: 3px;
-    --Radius-MD: 6px;
-    --Radius-LG: 12px;
-    --Radius-XL: 900px;
     --Variable-6: 6px;
     --Variable-12: 12px;
     --Variable-24: 24px;
-    --Font-MD: 1.125em;
-    --Font-LG: 2.125em;
+    --Font-SM: 12.25px;
+    --Font-MD: 20.25px;
+    --Font-LG: 38.25px;
     --Font-Family: 'Verdana', Sans-Serif;
     --Font-Header: 'Linux Libertine', 'Georgia', 'Times', 'Source Serif 4', Serif;
 }
@@ -91,6 +87,12 @@ Body {
     color: var(--Text-Primary);
 }
 
+.Text-S {
+    font-size: var(--Font-SM) !important;
+    font-weight: 400;
+    color: var(--Text-Primary);
+}
+
 .Paragraph {
     margin-top: unset !important;
     margin-bottom: 12px;
@@ -122,7 +124,13 @@ Body {
 }
 
 .No-Decoration {
-    text-decoration: none !important;
+    text-decoration: unset !important;
+}
+
+.Yes-Decoration {
+    text-decoration: Underline;
+    text-decoration-color: var(--Link-Secondary);
+    text-decoration-thickness: 2px;
 }
 
 /* Fixin */
@@ -146,6 +154,21 @@ Body {
     outline-style: solid;
     background-size: cover !important;
     background-image: var(--Image-URL);
+}
+
+.Image-P {
+    overflow: hidden !important;
+    height: calc( var(--Page-Width) / 2 );
+    width: var(--Page-Width-Mobile);
+    outline-color: HSL(0, 0%, 0%);
+    outline-width: 1px;
+    outline-offset: -1px;
+    outline-style: solid;
+}
+
+.Image-P > IMG {
+    max-width: var(--Page-Width-Mobile);
+    display: inline-block !important;
 }
 
 /* Margins */
@@ -182,4 +205,8 @@ Body {
 
 .Align-Center {
     align-items: center;
+}
+
+.Space-Between {
+    justify-content: space-between;
 }
