@@ -40,7 +40,7 @@ Body {
 
 .MenuBar {
     height: var(--Navigate-Height);
-    width: var(--Page-Width-Mobile);
+    min-width: var(--Page-Width-Mobile);
     position: fixed;
     background-color: var(--Background-Primary);
 }
@@ -63,6 +63,7 @@ Body {
     padding-left: var(--Variable-24);
     padding-right: var(--Variable-24);
     padding-bottom: calc(var(--Navigate-Height) + var(--Variable-24));
+    box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
